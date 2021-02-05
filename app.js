@@ -1,3 +1,4 @@
+require('dotenv').config();
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
@@ -21,9 +22,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 app.use(session({
-  secret: 'secret',
-  resave: true,
-  saveUninitialized: true
+  secret: 'secret', // recommended but wont be set due to http
+  resave: false,
+  saveUninitialized: true,
+  cookie: {samesite: true}
 }));
 
 app.use(sassMiddleware({

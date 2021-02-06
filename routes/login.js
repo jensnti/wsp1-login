@@ -17,7 +17,7 @@ router.post('/', async function(req, res, next) {
   if (username && password) {
     // check if user exists
     try {
-      const sql = 'SELECT password FROM users WHERE username = ?';
+      const sql = 'SELECT password FROM users WHERE name = ?';
 
       const result = await query(sql, username, password);
       

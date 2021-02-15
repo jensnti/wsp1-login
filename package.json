@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "connect-ensure-login": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
     "dotenv": "^8.2.0",
@@ -17,6 +18,8 @@
     "morgan": "~1.9.1",
     "mysql": "^2.18.1",
     "node-sass-middleware": "0.11.0",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {

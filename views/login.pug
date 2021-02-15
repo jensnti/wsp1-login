@@ -1,14 +1,17 @@
 extends layout
-
+block head 
+  link(rel='stylesheet', href='/stylesheets/signin.css')
 block content
-  main.container
-    h1 Login
-    form(action='/login', method='post') 
-      .mb-3
-        label.form-label(for='username') Username
-        input#username.form-control(type='text' name='username')
-      .mb-3
-        label.form-label(for='password') Password
-        input#password.form-control(type='password' name='password')
-      button.btn.btn-primary.mb-3(type='submit') Login
-
+  main.form-signin.text-center
+    form(method='post' action='login')
+      img.mb-4(src='/android-chrome-192x192.png' alt='' width='72' height='57')
+      h1.h3.mb-3.fw-normal Please sign in
+      label.visually-hidden(for='inputEmail') Email address
+      input#inputEmail.form-control(type='email' placeholder='Email address' required='' autofocus='' name='email')
+      label.visually-hidden(for='inputPassword') Password
+      input#inputPassword.form-control(type='password' placeholder='Password' required='' name='password')
+      .checkbox.mb-3
+        label
+          input(type='checkbox' value='remember-me')
+          |  Remember me
+      button.w-100.btn.btn-lg.btn-primary(type='submit') Sign in
